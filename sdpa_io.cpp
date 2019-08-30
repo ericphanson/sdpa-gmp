@@ -1150,34 +1150,34 @@ void IO::printLastInfo(int pIteration,
     fprintf(Display, "\n");
     phase.display(Display);
         fprintf(Display, "   Iteration = %d\n",       pIteration);
-    gmp_fprintf(Display, "          mu = %4.16Fe\n",  mu.current.get_mpf_t());
-    gmp_fprintf(Display, "relative gap = %4.16Fe\n",  relgap.get_mpf_t());
-    gmp_fprintf(Display, "         gap = %4.16Fe\n",  gap.get_mpf_t());
-    gmp_fprintf(Display, "      digits = %4.16Fe\n",  digits.get_mpf_t());
+    gmp_fprintf(Display, "          mu = %+.Fe\n",  mu.current.get_mpf_t());
+    gmp_fprintf(Display, "relative gap = %+.Fe\n",  relgap.get_mpf_t());
+    gmp_fprintf(Display, "         gap = %+.Fe\n",  gap.get_mpf_t());
+    gmp_fprintf(Display, "      digits = %+.Fe\n",  digits.get_mpf_t());
 
     #if REVERSE_PRIMAL_DUAL
     mpf_class mtmp1 = -solveInfo.objValDual;
     mpf_class mtmp2 = -solveInfo.objValPrimal;
-    gmp_fprintf(Display, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(Display, "objValPrimal = %+.Fe\n",
 	    mtmp1.get_mpf_t());
-    gmp_fprintf(Display, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(Display, "objValDual   = %+.Fe\n",
 	    mtmp2.get_mpf_t());
-    gmp_fprintf(Display, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "p.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(Display, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "d.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(Display, "relative eps = %10.16Fe\n",
+    gmp_fprintf(Display, "relative eps = %+.Fe\n",
             Rlamch_gmp("E").get_mpf_t());
     #else
-    gmp_fprintf(Display, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(Display, "objValPrimal = %+.Fe\n",
 	    solveInfo.objValPrimal.get_mpf_t());
-    gmp_fprintf(Display, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(Display, "objValDual   = %+.Fe\n",
 	    solveInfo.objValDual.get_mpf_t());
-    gmp_fprintf(Display, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "p.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(Display, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "d.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(Display, "relative eps = %10.16Fe\n",
+    gmp_fprintf(Display, "relative eps = %+.Fe\n",
             gmp_dlamchE().get_mpf_t());
     #endif
     if (printTime == true) {
@@ -1205,34 +1205,34 @@ void IO::printLastInfo(int pIteration,
     fprintf(fpout, "\n");
     phase.display(fpout);
         fprintf(fpout, "   Iteration = %d\n",  pIteration);
-    gmp_fprintf(fpout, "          mu = %4.16Fe\n",  mu.current.get_mpf_t());
-    gmp_fprintf(fpout, "relative gap = %4.16Fe\n",  relgap.get_mpf_t());
-    gmp_fprintf(fpout, "         gap = %4.16Fe\n",  gap.get_mpf_t());
-    gmp_fprintf(fpout, "      digits = %4.16Fe\n",  digits.get_mpf_t());
+    gmp_fprintf(fpout, "          mu = %+.Fe\n",  mu.current.get_mpf_t());
+    gmp_fprintf(fpout, "relative gap = %+.Fe\n",  relgap.get_mpf_t());
+    gmp_fprintf(fpout, "         gap = %+.Fe\n",  gap.get_mpf_t());
+    gmp_fprintf(fpout, "      digits = %+.Fe\n",  digits.get_mpf_t());
 
     #if REVERSE_PRIMAL_DUAL
     mpf_class mtmp1=-solveInfo.objValDual;
     mpf_class mtmp2=-solveInfo.objValPrimal;
-    gmp_fprintf(fpout, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValPrimal = %+.Fe\n",
 	    mtmp1.get_mpf_t());
-    gmp_fprintf(fpout, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValDual   = %+.Fe\n",
 	    mtmp2.get_mpf_t());
-    gmp_fprintf(fpout, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "p.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(fpout, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "d.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(fpout, "relative eps = %10.16Fe\n",
+    gmp_fprintf(fpout, "relative eps = %+.Fe\n",
             Rlamch_gmp("E").get_mpf_t());
     #else
-    gmp_fprintf(fpout, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValPrimal = %+.Fe\n",
 	    solveInfo.objValPrimal.get_mpf_t());
-    gmp_fprintf(fpout, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValDual   = %+.Fe\n",
 	    solveInfo.objValDual.get_mpf_t());
-    gmp_fprintf(fpout, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "p.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(fpout, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "d.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(fpout, "relative eps = %10.16Fe\n",
+    gmp_fprintf(fpout, "relative eps = %+.Fe\n",
             Rlamch_gmp("E").get_mpf_t());
     #endif
     fprintf(fpout, "total time   = %.3f\n",cputime);
@@ -1397,34 +1397,34 @@ void IO::printLastInfo(int pIteration,
     fprintf(Display, "\n");
     phase.display(Display);
     gmp_fprintf(Display, "   Iteration = %d\n",       pIteration);
-    gmp_fprintf(Display, "          mu = %4.16Fe\n",  mu.current.get_mpf_t());
-    gmp_fprintf(Display, "relative gap = %4.16Fe\n",  relgap.get_mpf_t());
-    gmp_fprintf(Display, "         gap = %4.16Fe\n",  gap.get_mpf_t());
-    gmp_fprintf(Display, "      digits = %4.16Fe\n",  digits.get_mpf_t());
+    gmp_fprintf(Display, "          mu = %+.Fe\n",  mu.current.get_mpf_t());
+    gmp_fprintf(Display, "relative gap = %+.Fe\n",  relgap.get_mpf_t());
+    gmp_fprintf(Display, "         gap = %+.Fe\n",  gap.get_mpf_t());
+    gmp_fprintf(Display, "      digits = %+.Fe\n",  digits.get_mpf_t());
 
     #if REVERSE_PRIMAL_DUAL
     mpf_class mtmp1 = -solveInfo.objValDual;
     mpf_class mtmp2 = -solveInfo.objValPrimal;
-    gmp_fprintf(Display, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(Display, "objValPrimal = %+.Fe\n",
 	    mtmp1.get_mpf_t());
-    gmp_fprintf(Display, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(Display, "objValDual   = %+.Fe\n",
 	    mtmp2.get_mpf_t());
-    gmp_fprintf(Display, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "p.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(Display, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "d.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(Display, "relative eps = %10.16Fe\n",
+    gmp_fprintf(Display, "relative eps = %+.Fe\n",
             Rlamch_gmp("E").get_mpf_t());
     #else
-    gmp_fprintf(Display, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(Display, "objValPrimal = %+.Fe\n",
 	    solveInfo.objValPrimal.get_mpf_t());
-    gmp_fprintf(Display, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(Display, "objValDual   = %+.Fe\n",
 	    solveInfo.objValDual.get_mpf_t());
-    gmp_fprintf(Display, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "p.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(Display, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(Display, "d.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(Display, "relative eps = %10.16Fe\n",
+    gmp_fprintf(Display, "relative eps = %+.Fe\n",
             Rlamch_gmp("E").get_mpf_t());
     #endif
     if (printTime == true) {
@@ -1452,34 +1452,34 @@ void IO::printLastInfo(int pIteration,
     fprintf(fpout, "\n");
     phase.display(fpout);
     fprintf(fpout, "   Iteration = %d\n",  pIteration);
-    gmp_fprintf(fpout, "          mu = %4.16Fe\n",  mu.current.get_mpf_t());
-    gmp_fprintf(fpout, "relative gap = %4.16Fe\n",  relgap.get_mpf_t());
-    gmp_fprintf(fpout, "         gap = %4.16Fe\n",  gap.get_mpf_t());
-    gmp_fprintf(fpout, "      digits = %4.16Fe\n",  digits.get_mpf_t());
+    gmp_fprintf(fpout, "          mu = %+.Fe\n",  mu.current.get_mpf_t());
+    gmp_fprintf(fpout, "relative gap = %+.Fe\n",  relgap.get_mpf_t());
+    gmp_fprintf(fpout, "         gap = %+.Fe\n",  gap.get_mpf_t());
+    gmp_fprintf(fpout, "      digits = %+.Fe\n",  digits.get_mpf_t());
 
     #if REVERSE_PRIMAL_DUAL
     mpf_class mtmp1=-solveInfo.objValDual;
     mpf_class mtmp2=-solveInfo.objValPrimal;
-    gmp_fprintf(fpout, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValPrimal = %+.Fe\n",
 	    mtmp1.get_mpf_t());
-    gmp_fprintf(fpout, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValDual   = %+.Fe\n",
 	    mtmp2.get_mpf_t());
-    gmp_fprintf(fpout, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "p.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(fpout, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "d.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(fpout, "relative eps = %10.16Fe\n",
+    gmp_fprintf(fpout, "relative eps = %+.Fe\n",
             Rlamch_gmp("E").get_mpf_t());
     #else
-    gmp_fprintf(fpout, "objValPrimal = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValPrimal = %+.Fe\n",
 	    solveInfo.objValPrimal.get_mpf_t());
-    gmp_fprintf(fpout, "objValDual   = %10.16Fe\n",
+    gmp_fprintf(fpout, "objValDual   = %+.Fe\n",
 	    solveInfo.objValDual.get_mpf_t());
-    gmp_fprintf(fpout, "p.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "p.feas.error = %+.Fe\n",
 	    currentRes.normPrimalVec.get_mpf_t());
-    gmp_fprintf(fpout, "d.feas.error = %10.16Fe\n",
+    gmp_fprintf(fpout, "d.feas.error = %+.Fe\n",
 	    currentRes.normDualMat.get_mpf_t());
-    gmp_fprintf(fpout, "relative eps = %10.16Fe\n",
+    gmp_fprintf(fpout, "relative eps = %+.Fe\n",
             Rlamch_gmp("E").get_mpf_t());
     #endif
     fprintf(fpout, "total time   = %.3f\n",cputime);
